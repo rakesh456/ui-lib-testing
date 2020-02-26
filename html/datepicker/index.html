@@ -1,0 +1,132 @@
+<html>
+    <head>
+        <title>Date Picker</title>
+        <link rel='stylesheet' href='../bootstrap/css/bootstrap.css'>
+        <link rel='stylesheet' href='../bundle.css'>
+        <link rel='stylesheet' href='../style.css'>
+    </head>
+       <body>
+           <div class="container center">
+           <h3>Date Picker</h3>
+           <div class="div-col">
+                <date-picker id="datepicker" data-options='{"displayFormat": "DD/MM/YYYY", "iconAlignment":"left", "showErrorMessage": true, "dateStringAlignment": "left", "lowerLimit": "08/08/2015", "upperLimit": "30/09/2022", "validationMessages": [{"inValidFormat": "Invalid DOB"}, { "outsideRange": ""}] , "isDisabled": false, "showButtons": true, "dateButtonPrimary": "", "showClearIcon": false, "manualEntry": true, "disabledList": ["01/02/2020", "15/02/2020", "20/02/2020", "20/11/2019"], "indicatorList": [{ "dates": ["01/10/2019","21/02/2020"], "color": "red" }, { "dates": ["02/02/2020"], "color": "green" }]}' onFocus="onFocusHandler()" onBlur="onBlurHandler()" onChange="onChangeHandler()" onInput="onInputHandler()" onKeyDown="onKeyDownHandler()" onKeyUp="onKeyUpHandler()" onSelect="onSelectHandler(e)"></date-picker></date-picker>
+                <br/>
+                <div id="display1"></div>
+            </div>
+           <div>
+           
+            <button type="button" class="btn btn-info btn-sm" onclick="setValue('datepicker', '23/09/2019');">Set Value to 23/09/2019</button>
+            <button type="button" class="btn btn-info btn-sm" onclick="refresh('datepicker');">Refresh</button>
+            <button type="button" class="btn btn-info btn-sm" onclick="getStartDate('datepicker','display1');">start date</button>
+            <button type="button" class="btn btn-info btn-sm" onclick="getEndDate('datepicker','display1');">End date</button>
+            <button type="button" class="btn btn-info btn-sm" onclick="displayValue('datepicker', 'display1');">Display</button>
+            <button type="button" class="btn btn-info btn-sm" onclick="set('datepicker');">Set Data Options</button>
+            
+           </div>
+           </div>
+       </body>
+       <script src='../bundle.js'></script>
+       <script>
+            function onFocusHandler() {
+                console.log('onFocusHandler called ');
+            }
+
+            function onBlurHandler() {
+                console.log('onBlurHandler called ');
+            }
+
+            function onChangeHandler() {
+                console.log('onChangeHandler called ');
+            }
+
+            function onInputHandler() {
+                console.log('onInputHandler called ');
+            }
+
+            function onKeyDownHandler() {
+                console.log('onKeyDownHandler called ');
+            }
+
+            function onKeyUpHandler() {
+                console.log('onKeyUpHandler called ');
+            }
+
+            function onSelectHandler(e) {
+                console.log('onSelectHandler called ');
+            }
+
+             function val()
+            {
+            var val =  document.getElementById("datepicker").getValue()
+            console.log(val)
+            }
+
+            function setValue(id, value) {
+                let element = document.getElementById(id);
+                element.setValue(value);
+            }
+
+            function refresh(id) {
+                let element = document.getElementById(id);
+                element.refresh();
+            }
+
+            function getStartDate(id, divId) {
+                let element = document.getElementById(id);
+                let dateValue = element.getStartDate();
+                let element2 = document.getElementById(divId);
+                if (element2) {
+                    element2.innerHTML = 'Start Date : ' + dateValue;
+                }
+            }
+
+            function getEndDate(id, divId) {
+                let element = document.getElementById(id);
+                let dateValue = element.getEndDate();
+                let element2 = document.getElementById(divId);
+                if (element2) {
+                    element2.innerHTML = 'End Date : ' + dateValue;
+                }
+            }
+
+            function reloadDatepicker(id) {
+                let element = document.getElementById(id);
+                let options = JSON.parse(element.getAttribute('data-options'));
+                //let options = element.getAttribute('selected-date');
+                console.log(options)
+                options.isDisabled = true;
+                element.setAttribute('data-options', JSON.stringify(options));
+                
+                element.reload();
+            }
+
+            
+            function displayValue(id, divId) {
+                let element = document.getElementById('datepicker');
+
+                element.setDataOption({"upperLimit":"18/12/2019"});
+
+                let dateValue = element.getValue();
+                let element2 = document.getElementById(divId);
+
+                if (element2) {
+                    element2.innerHTML = 'From displayValue function : ' + dateValue;
+                }
+            }
+
+
+            function set(id)
+            {
+                document.getElementById(id).setDataOption({"upperLimit": "18/12/2021"})
+                let divel=document.getElementById('display1');
+                divel.innerHTML = "upper limit set to '18/12/2021'"
+            }
+
+            function setUpper(from) {
+                    let element = document.getElementById(from);
+                    
+
+                    element.setDataOption({ "upperLimit": "12/01/2022" });
+            }     
+       </script>
+</html>

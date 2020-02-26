@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Date Hierarchy</title>
+        <link rel='stylesheet' href='../bootstrap/css/bootstrap.css'>
+        <link rel='stylesheet' href='../bundle.css'>
+        <link rel='stylesheet' href='../style.css'>
+    </head>
+       <body>
+           <div class="container center">
+           <h3>Date Hierarchy</h3>
+           <div class="div-col">
+            <date-hierarchy id='datehierarchy' onKeyUp="onKeyUpHandler()" onKeyDown="onKeyDownHandler()" data-options='{"lowerLimit": "2020", "upperLimit": "2025",  "disabledList":["q1/2020","02/01/2020","09/05/2020","12/02/2023","q2/2020","09/01/2024","12/03/2025","11/1/2023","8/01/2020", "11/11/2022"]}' onChange="onChangeHandler()" onFocus="onFocusHandler()" onBlur="onBlurHandler()" onInput="onInputHandler()" >
+        </date-hierarchy>
+                <br/>
+                <div id="display1"></div>
+            </div>
+           <div>
+            <button onclick="getDates('datehierarchy');">Get Dates</button>
+            <button onclick="refresh('datehierarchy')">Refresh</button>
+            <button onclick="setValues('datehierarchy')">Set Dates</button>
+           </div>
+           </div>
+       </body>
+       <script src='../bundle.js'></script>
+       <script>
+            function onFocusHandler() {
+                console.log('onFocusHandler called ');
+            }
+
+            function onBlurHandler() {
+                console.log('onBlurHandler called ');
+            }
+
+            function onChangeHandler() {
+                console.log('onChangeHandler called ');
+            }
+
+            function onInputHandler() {
+                console.log('onInputHandler called ');
+            }
+
+            function onKeyDownHandler() {
+                console.log('onKeyDownHandler called ');
+            }
+
+            function onKeyUpHandler() {
+                console.log('onKeyUpHandler called ');
+            }
+
+            function onSelectHandler(e) {
+                console.log('onSelectHandler called ');
+            }
+
+            function setValues(id)
+            {
+                let m = ["2/1/2020", "2/5/2020", "11/6/2020"]
+                document.getElementById(id).setValues(m)
+            }
+            function getDates(id)
+            {
+                let elem = document.getElementById(id)
+                alert(elem.getValues())
+            }
+
+            function refresh(id)
+            {
+                document.getElementById(id).refresh();
+            }
+
+       </script>
+</html>
