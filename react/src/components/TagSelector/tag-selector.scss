@@ -1,0 +1,366 @@
+$primary-one-light: #e6f0f6;
+$primary-one-dark: #006ba6;
+$primary-one-bright: #1a7aaf;
+$primary-two-light: #eeeeef;
+$primary-two-bright: #76797b;
+$primary-two-dark: #54585a;
+$primary-three-dark: #000080;
+$secondary-one-light: #f3f8e6;
+$secondary-one-bright: #9dca33;
+$secondary-one-dark: #84bd00;
+$secondary-two-bright: #335161;
+$secondary-three-bright: #78909C;
+$secondary-four-bright: #5D717C;
+$secondary-two-light: #e6e9eb;
+$secondary-two-dark: #00263a;
+$grey-one: #ececec;
+$complementary-one: #f8f8f9;
+$complementary-two: #e6edf3;
+$complementary-three: #ccdbe7;
+$complementary-four: #80a5c3;
+$complementary-five: #bbbbbb;
+$text-black: #000000;
+$text-white: #ffffff;
+$text-tertiary: #bbbcbd;
+$cg-aqua-10: #ecf9f7;
+$cg-aqua-30: #c6ece6;
+$cg-aqua-50: #a0e0d6;
+$cg-aqua-70: #79d4c5;
+$cg-aqua: #40c1ac;
+$cg-crimson-10: #fbeae8;
+$cg-crimson-30: #f4bfbb;
+$cg-crimson-60: #e97f77;
+$cg-crimson-80: #e15449;
+$cg-crimson-90: #de3e33;
+$cg-navy-10: #b3c9db;
+$cg-navy-80: #336f9f;
+$cg-navy-90: #1a5d93;
+$cg-navy: #004b87;
+$gui-slate: #78909c;
+$gui-green: #00b16a;
+$gui-mango: #ffb900;
+$gui-gold: #fff1d2;
+$gui-snow: #fafafa;
+$gui-blue: #069abc;
+$gui-white: #fffffe;
+$gui-no-data: #eeeeee;
+$gui-error-red: #fd462a;
+$font-family: 'Roboto', sans-serif;
+
+tag-selector{
+    z-index: 9989;
+}
+
+.VS-Hidden{
+    display: none;
+    visibility: hidden;
+}
+
+.VS-Show{
+    display: block;
+}
+
+.VS-MrgT5{
+    margin-top: 5px;
+}
+
+.VS-TextCenter{
+    text-align: center;
+}
+
+.VS-TextLeft{
+    text-align: left;
+}
+
+.VS-TextRight{
+    text-align: right;
+}
+
+.VS-PullRight{
+    float: right;
+}
+
+.VS-PullLeft{
+    float: left;
+}
+
+.VS-TextDark{
+    color: #333;
+}
+
+.VS-Text-Primary {
+    width: 16px;
+    height: 16px;
+}
+
+.VS-HelperText{
+    color: $primary-two-bright;
+}
+
+.VS-HelperText,
+.VS-CodeText  {
+    width: 49%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.VS-CodeText {
+    // text-overflow: ellipsis;
+    // white-space: nowrap;
+    // overflow: hidden;
+    // width: 50%;
+    // float: left;
+}
+
+.VS-Tag-Input-Border.VS-ReadOnly,
+.VS-Tag-Input-Border.VS-ReadOnly .VS-TagSelector-Input {
+    cursor: default;
+    background-color: #ebebe4;
+}
+
+.VS-Tag-Input-Border {
+    width: 320px;
+    height: auto;
+    border-radius: 2px;
+    box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    border: solid 1px $grey-one;
+    background-color: $text-white;
+    padding-left: 8px;
+    padding-top: 4px;
+    padding-bottom: 8px;
+}
+
+.VS-HeirarchyItems{
+    ul{
+        padding-left: 20px; 
+    }
+    .VS-HeirarchyTitle{
+        background-color: $complementary-one;
+        padding-left: 10px; 
+    }
+}
+
+
+.VS-Tag-Input-Border ul{
+    height: auto;
+    max-height: 224px;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.VS-Tag-Input-Border ul li{
+    display: inline-block;
+}
+
+.VS-Tag-Input-Border input{
+    border: 0px;
+    width: 300px;
+    vertical-align: middle;
+    outline: transparent;
+    margin: 5px 0px 0px 7px;
+    color: $secondary-two-dark;
+    display: inline-block;
+}
+
+.VS-Invalid-Input{
+    border: 1px solid $cg-crimson-90 !important;
+}
+
+.VS-App{
+    position: relative;
+    font-family: $font-family;
+}
+
+.VS-TagSelectorContainer{
+    background-color: #fff;
+    width: 328px;
+    height: auto;
+    max-height: 224px;
+    border: 1px solid #ddd;
+    position: absolute;
+    overflow-y: auto;
+}
+
+.VS-AutocompleteItems{
+    height: auto;
+    max-height: 224px;
+    list-style: none;
+    padding: 0px 0px 0px;
+    margin: 0px;
+}
+
+.VS-NoData{
+    padding: 20px;
+    color: $primary-two-bright;
+    text-align: center;
+}
+
+.VS-AddButton{
+    border: 1px solid $gui-blue;
+    background-color: $text-white;
+    padding: 5px 10px;
+    margin-top: 10px;
+    color: $gui-blue;
+    cursor: pointer;
+}
+
+.VS-AddNewItem{
+    padding: 20px;
+    color: $secondary-two-dark;
+    text-align: center;
+}
+
+.VS-AutocompleteItems .VS-ItemIndexed{
+    border: 1px solid $secondary-four-bright;
+    cursor: default;
+}
+
+.VS-AutocompleteItems .VS-ItemSelected{
+    background-color: $secondary-four-bright;
+    cursor: default;
+}
+
+.VS-AutocompleteItems .VS-ItemSelected span,
+.VS-AutocompleteItems .VS-HeirarchyItems .VS-ItemSelected span{
+    color: $text-white;
+}
+
+.VS-AutocompleteItems li{
+    padding: 8px 0px 8px 10px;
+    margin-bottom: 1px;
+    color: $secondary-two-dark;
+    cursor: pointer;
+    list-style: none;
+    height: 20px;
+}
+
+.VS-AutoCompleteItem {
+    max-width: 256px;
+    cursor: default;
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+    padding: 8px 0px 8px 16px !important;
+    white-space: nowrap;
+    position: relative;
+    margin-right: 2px;
+    margin-top: 1px !important;
+    border: 0 none;
+    font-size: .9em;
+    background: $secondary-three-bright !important;
+    color: #fff !important;
+    border-radius: 3px !important;
+    font-weight: bold;
+}
+
+.VS-CodeText .VS-TooltipText::after,
+.VS-HelperText .VS-TooltipText::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #555 transparent;
+}
+
+.VS-CodeText .VS-TooltipText-Top::after,
+.VS-HelperText .VS-TooltipText-Top::after {
+    bottom: -50%;
+    border-color: #555 transparent transparent transparent;
+}
+
+.VS-CodeText:hover .VS-TooltipText ,
+.VS-HelperText:hover .VS-TooltipText, {
+    display: block;
+    opacity: 1;
+}
+
+.VS-TooltipText{
+    display: none;
+    width: 90%;
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 3px 0px 3px 5px;
+    position: absolute;
+    z-index: 10;
+    left: 72px;
+    margin-left: -60px;
+    opacity: 1;
+    transition: opacity 0.3s;
+    word-break: break-word;
+    font-size: 10px;
+    font-weight: normal;
+    margin-top: 4px;
+}
+
+.VS-TooltipText-Top{
+    margin-top: -40px !important;
+    // bottom: 22px;
+}
+
+.VS-AutoCompleteItem.VS-ExtraWidth{
+    max-width: 90%;
+}
+
+.VS-AutoCompleteItem .VS-AutoCompleteItem-Span{
+    max-width: 80%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    /* display: inline-flex; */
+    float: left;
+}
+
+.VS-AutoCompleteItem-Icon {
+    right: 0px;
+    top: 1px;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    background: $secondary-four-bright;
+    padding: 12px 14px;
+    margin-left: 16px;
+    font-size: 10px;
+}
+
+.VS-AutoCompleteItem-Icon.VS-Disabled{
+    background: $primary-two-bright !important;
+    cursor: default !important;
+}
+
+// .VS-Scrollbar
+// {
+// 	margin-left: 30px;
+// 	float: left;
+// 	height: 300px;
+// 	width: 65px;
+// 	background: #F5F5F5;
+// 	overflow-y: scroll;
+// 	margin-bottom: 25px;
+// }
+
+
+#VS-Scrollbar::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+#VS-Scrollbar::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+#VS-Scrollbar::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+}
+

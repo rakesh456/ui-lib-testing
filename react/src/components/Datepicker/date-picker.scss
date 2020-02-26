@@ -1,0 +1,431 @@
+$primary-one-light: #e6f0f6;
+$primary-one-dark: #006ba6;
+$primary-one-bright: #1a7aaf;
+$primary-two-light: #eeeeef;
+$primary-two-bright: #76797b;
+$primary-two-dark: #54585a;
+$primary-three-dark: #000080;
+$secondary-one-light: #f3f8e6;
+$secondary-one-bright: #9dca33;
+$secondary-one-dark: #84bd00;
+$secondary-two-bright: #335161;
+$secondary-two-light: #e6e9eb;
+$secondary-two-dark: #00263a;
+$grey-one: #ececec;
+$complementary-one: #f8f8f9;
+$complementary-two: #e6edf3;
+$complementary-three: #ccdbe7;
+$complementary-four: #80a5c3;
+$complementary-five: #bbbbbb;
+$text-black: #000000;
+$text-white: #ffffff;
+$text-tertiary: #bbbcbd;
+$cg-aqua-10: #ecf9f7;
+$cg-aqua-30: #c6ece6;
+$cg-aqua-50: #a0e0d6;
+$cg-aqua-70: #79d4c5;
+$cg-aqua: #40c1ac;
+$cg-crimson-10: #fbeae8;
+$cg-crimson-30: #f4bfbb;
+$cg-crimson-60: #e97f77;
+$cg-crimson-80: #e15449;
+$cg-crimson-90: #de3e33;
+$cg-navy-10: #b3c9db;
+$cg-navy-80: #336f9f;
+$cg-navy-90: #1a5d93;
+$cg-navy: #004b87;
+$gui-slate: #78909c;
+$gui-green: #00b16a;
+$gui-mango: #ffb900;
+$gui-gold: #fff1d2;
+$gui-snow: #fafafa;
+$gui-blue: #069abc;
+$gui-white: #fffffe;
+$gui-no-data: #eeeeee;
+$gui-error-red: #fd462a;
+$font-family: 'Roboto', sans-serif;
+
+date-picker{
+    z-index: 9989;
+}
+
+.VS-Calendar-Input::-ms-clear, .VS-Calendar-Input-Icon::-ms-clear {
+    display: none;
+}
+
+.VS-Input-Border {
+    width: 216px;
+    height: 40px;
+    border-radius: 2px;
+    box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    border: solid 1px $grey-one;
+    background-color: $text-white
+}
+
+.VS-shape-rounded-fill-for-year .VS-Disabled,
+.VS-shape-rounded-fill-for-quarter .VS-Disabled,
+.VS-shape-rounded-fill-for-month .VS-Disabled{
+    cursor: default;
+    color: #dddddd;
+}
+
+.VS-Input-Border.VS-Disabled{
+    cursor: default;
+    background-color: rgb(235, 235, 228);
+}
+
+.VS-Input-Border.VS-Disabled .VS-Calendar-Input{
+    color: $primary-two-bright;
+    background-color: rgb(235, 235, 228);
+}
+
+.VS-InvalidText{
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    color: $cg-crimson-90;
+}
+
+.VS-Regular-UPPER-Case {
+    width: 135px;
+    height: 24px;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.14;
+    letter-spacing: normal;
+    color: $text-tertiary;
+  }
+
+.VS-Medium-UPPER-Case {
+    width: 136px;
+    height: 16px;
+    /* font-family: Roboto; */
+    font-size: 12px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    text-align: center;
+    color: $secondary-two-dark
+}
+
+.VS-shape-rounded-fill, .VS-shape-rounded-fill-with-button, .VS-shape-rounded-fill-for-year, .VS-shape-rounded-fill-for-month, .VS-shape-rounded-fill-for-quarter {
+    width: 216px;
+    height: 248px;
+    border-radius: 1px;
+}
+
+.VS-shape-rounded-fill-with-button {
+    height: 292px;
+}
+
+.VS-shape-rounded-fill-for-year {
+    height: 210px;
+    .VS-DateRow{
+        margin: 12px auto;
+        padding: 5px 10px;
+    }
+    .VS-Active{
+        background-color: $secondary-two-dark;
+        color: $text-white;
+    }
+    .VS-NextPrevArrow{
+        margin: 5px 5px 25px;
+        cursor: pointer;
+    }
+}
+
+.VS-shape-rounded-fill-for-month {
+    height: 210px;
+    .VS-DateRowFlex{
+        display: flex;
+        margin: 3px auto;
+        padding: 5px 10px;
+    }
+    .VS-Year, .VS-MonthQuarter{
+        min-width: 30px;
+    }
+    .VS-Active{
+        background-color: $secondary-two-dark;
+        color: $text-white;
+    }
+}
+
+.VS-shape-rounded-fill-for-quarter {
+    height: 100px;
+    .VS-DateRowFlex{
+        display: flex;
+        margin: 3px auto;
+        padding: 5px 10px;
+    }
+    .VS-Year, .VS-MonthQuarter{
+        min-width: 65px;
+        text-align: center;
+    }
+    .VS-Active{
+        background-color: $secondary-two-dark;
+        color: $text-white;
+    }
+}
+
+.VS-Grey {
+    width: 24px;
+    height: 24px;
+    /* object-fit: contain; */
+}
+
+.VS-Shape {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    /* object-fit: contain; */
+    margin: 5px 5px;
+    font-size: 10px;
+}
+
+.VS-Day .VS-DayCurrent,
+.VS-DisabledDay,
+.VS-NextPrevDay{
+    color: $complementary-five;
+}
+
+.VS-Year, .VS-MonthQuarter{
+    color: $secondary-two-dark;
+    border: solid 1px $grey-one;
+    padding: 5px;
+    margin: 0px 8px;
+    cursor: pointer;
+}
+
+.VS-MonthQuarter{
+    margin: 0px 10px;
+    padding: 5px 6px;
+}
+
+.VS-Day span:hover {
+    width: 20px;
+    height: 20px;
+    border: solid 2px $primary-one-dark;
+    border-radius: 15px;
+    padding: 4.2px 5px;
+}
+
+.VS-Day .VS-PadExtra:hover,
+.VS-DaySelected.VS-PadExtra{
+    padding: 3.0px 7.1px;
+}
+
+.VS-Day .VS-DisabledDay:hover{
+    border: none;
+    cursor: default;
+}
+
+.VS-DaySelected {
+    width: 20px;
+    height: 20px;
+    border: solid 2px $primary-one-dark;
+    background: #006ba6;
+    border-radius: 15px;
+    padding: 3px 4px;
+    color: #fff;
+}
+
+.VS-Hidden{
+    display: none;
+    visibility: hidden;
+}
+
+.VS-Show{
+    display: block;
+}
+
+.VS-MrgT5{
+    margin-top: 5px;
+}
+
+.VS-TextCenter{
+    text-align: center;
+}
+
+.VS-TextLeft{
+    text-align: left;
+}
+
+.VS-TextRight{
+    text-align: right;
+}
+
+.VS-PullRight{
+    float: right;
+}
+
+.VS-PullLeft{
+    float: left;
+}
+
+.VS-TextDark{
+    color: #333;
+}
+
+.VS-Text-Primary {
+    width: 16px;
+    height: 16px;
+}
+
+.VS-FilterIcon,
+.VS-CloseIcon{
+    width: 15px;
+    height: 20px;
+}
+
+.VS-indicator{
+    position: absolute;
+    margin-left: 12.5px;
+    margin-top: 5px;
+    height: 6px;
+    width: 6px;
+    background-color: $primary-one-bright;
+    border-radius: 50%;
+}
+
+.VS-DatepickerInput{
+    width: 216px;
+    height: 40px;
+    padding: 0px 2px;    
+}
+
+.VS-Calendar-Input, .VS-Input-Icon .VS-Calendar-Input{
+    border: 0px !important;
+    width: 165px !important;
+    margin: 7px 0px 0px;
+}
+
+.VS-Input-Icon .VS-Calendar-Input{
+    width: 150px !important;
+    margin: 7px 0px 0px 8px;
+}
+
+.VS-Invalid-Input{
+    border: 1px solid $cg-crimson-90 !important;
+}
+
+.VS-Input-Border input{
+    border: 0px;
+    width: 150px;
+    vertical-align: middle;
+    outline: transparent;
+    margin: 7px 0px 0px;
+    color: #000;
+}
+
+.VS-CalendarContainer {
+    outline:none !important;
+    z-index: 1;
+}
+
+.VS-App{
+    position: relative;
+    font-family: $font-family;
+}
+
+.VS-DatepickerContainer{
+    background-color: #fff;
+    width: 216px;
+}
+
+.VS-CalendarContainer {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    color: $primary-three-dark;
+    font-size: 16px;
+    font-weight: bold;
+    position: absolute;
+}
+
+.VS-CalendarContainer .VS-CalendarMonth{
+    display: inline-block;
+    width: 216px;
+    height: 30px;
+}
+.VS-CalendarContainer .VS-CalendarMonth .VS-MonthName{
+    padding: 7px 0px;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+.VS-CalendarContainer .VS-CalendarMonth .VS-Icon{
+    margin-top: 4px;
+    cursor: pointer;
+}
+.VS-CalendarContainer .VS-CalendarMonth .VS-DisabledIcon,
+.VS-CalendarContainer .VS-NextPrevArrow .VS-DisabledIcon{
+    color: $complementary-three;
+}
+
+.VS-CalendarContainer .VS-CalendarWeek .VS-WeekName{
+    cursor: pointer;
+    display: inline-block;
+    width: 30px;
+    height: 16px;
+    line-height: 1.33;
+    letter-spacing: normal;
+    text-align: center;
+}
+
+.VS-CalendarContainer .CalendarDay .VS-WeekDay{
+    margin: 0px 9px;
+}
+
+.VS-Day .VS-Today{
+    color: #fff;
+    background-color: $primary-three-dark;
+    border: 2px solid $primary-three-dark;
+    padding: 3px;
+}
+
+.VS-Day .VS-SelectedDay{
+    border: 2px solid $secondary-two-dark;
+    padding: 3px;
+}
+
+.VS-Day{
+    cursor: pointer;
+    transition: all .4s ease-out;
+    display: inline-block;
+    width: 30px;
+    height: 16px;
+    text-align: center;
+    margin: 8px 0px;
+}
+
+.VS-DateRow{
+    display: block;
+}
+
+.VS-CalendarButtons{
+    padding: 5px;
+    height: 30px;
+}
+
+.VS-CalendarButtons button{
+    padding: 8px 10px;
+    text-transform: uppercase;
+    border-radius: 3px;
+}
+
+.VS-CalendarButtons .VS-ClearButton{
+    float: left;
+    color: $primary-three-dark;
+    background-color: #fff;
+    border: 1px solid $primary-three-dark;
+}
+
+.VS-CalendarButtons .VS-SelectButton{
+    float: right;
+    color: #fff;
+    background-color: $primary-three-dark;
+    border: 1px solid #fff;
+}
